@@ -1,0 +1,16 @@
+bar
+baz
+ipsum
+dolor
+sit
+amet
+brown
+fox
+jumps
+over
+lazy
+dog
+@evil.com
+@acme.com
+.com
+com
