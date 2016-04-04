@@ -24,7 +24,7 @@ The larger your dictionary, the longer each pass will take, so it is worth start
 If you never type _ipsum_ without ever typing _lorem_ before it, it probably is not worth considering any password starting with _ipsum_. List the dictionary items you do not want to use as prefixes in your `DictionaryPrefixesToSkip` file. They will still be used, just not as the first word of your password.
 
 ##### Repeating words
-If _lorem_ is in your dictionary, and if it is possible that the password is _loremipsumlorem_, you would set `DictionaryItemsMayRepeat` to `true`. When set to false, dictionary items will not be repeated in a password.
+If _lorem_ is in your dictionary, and if it is possible that the password is _loremipsumlorem_, you would set `DictionaryItemsMayRepeat` to `true`. When set to `false`, dictionary items will not be repeated in a password.
 
 ##### Password length
 If you know precisely how long the password is, or just have a rough idea, it is worthwhile to set the minimum and maximum password length accordingly. Using a wider range simply means the program will test more passwords. Not the end of the world.
