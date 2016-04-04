@@ -33,7 +33,7 @@ If you know precisely how long the password is, or just have a rough idea, it is
 This indicates to the program when it is time to throw its hands up. If your password might have more than 4 items from your dictionary, it might be worth spending some time improving your dictionary.
 
 ### Testing it out
-There are some values already in `App.config` and some files in the `Resources` folder that will let you see the program in action. The password for `certycert.p12` is _testingLoremipsum@evil.com_. I encourage you to mess with the dictionary or the `appSettings` to see how it affects performance.
+There are some values already in `App.config` and some files in the `Resources` folder that will let you see the program in action. The password for `certycert.p12` is _`testingLoremipsum@evil.com`_. I encourage you to mess with the dictionary or the `appSettings` to see how it affects performance.
 
 -----
 ## The why
@@ -48,7 +48,7 @@ While I was happy with having found the lost password, I believed the speed of t
 
 The one thing I found during this process that reliably increased the speed of the process was to include a list of words that should never be used as a password prefix. For example, I might start a password with _lorem_ or _ipsum_, but never _dolor_, _sit_, or _amet_.
 
-## Things got way better
+## Cartesian products make things way better
 Despite my best efforts at implementing a dictionary attack that relied on multithreading, I pretty consistently ran into problems with the threads interfering with each other. In an effort to mitigate this, I started from scratch, breaking the behavior of the program out into single responsibility classes. I would need a class that generated passwords, a class that tested passwords, and a class that managed the input and output of the two previous classes.
 
 During this process I discovered a much more efficient means of finding my lost password. Instead of generating every conceivable password that begins with _lorem_ before moving on to _ipsum_, the program would look at the [Cartesian product](https://en.wikipedia.org/wiki/Cartesian_product) of each item in the dictionary with each item previously tested.
