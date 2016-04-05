@@ -8,6 +8,7 @@ namespace RecoverCertPassword
     {
         static void Main(string[] args)
         {
+            Console.Title = "RecoverCertPassword";
             AttackCriteria criteria = AttackCriteria.CurrentCriteria;
             ConsoleInteraction consoleInteraction = ConsoleInteraction.CurrentConsole;
 
