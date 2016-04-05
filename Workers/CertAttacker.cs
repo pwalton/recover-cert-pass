@@ -70,7 +70,13 @@ namespace RecoverCertPassword.Workers
                     }
                     else if (currentDepth != maxDepth)
                         CrunchDictionaryItems(pass, wordsToUse,
-                            wordsToSkip.Concat(new List<string>() { pass.Remove(0, prefix.Length) }));
+                            (
+                                _criteria.DictionaryItemsMayRepeat ?
+                                    new List<string>() :    
+                                    wordsToSkip.Concat(new List<string>() { pass.Remove(0, prefix.Length) })
+                                    
+                            )
+                        );
 
                     if ((++passwordsRejected) % 1000 == 0)
                         _console.DisplayMessage(String.Format("Current Depth: {0}, Passwords Rejected: {1}",
